@@ -24,6 +24,6 @@ logico:https://app.brmodeloweb.com/#!/publicview/69df69dee33b4dc332f92f2d
 
 conceitual:https://app.brmodeloweb.com/#!/publicview/69df7102e33b4dc332f9333c
 
-logica:https://app.brmodeloweb.com/#!/publicview/69df7140e33b4dc332f9335f
+logica:https://app.brmodeloweb.com/#!/publicview/69df720be33b4dc332f9340d
 
 </p>
