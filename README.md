@@ -8,7 +8,7 @@
   
 conceitual:https://app.brmodeloweb.com/#!/publicview/69df687ee33b4dc332f92e4e
 
-logico:https://app.brmodeloweb.com/#!/publicview/69df68aee33b4dc332f92e5e
+logico:https://app.brmodeloweb.com/#!/publicview/69df7190e33b4dc332f933a5
 
 </p>
 
