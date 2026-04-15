@@ -14,7 +14,7 @@ logico:https://app.brmodeloweb.com/#!/publicview/69df7190e33b4dc332f933a5
 
 <p>stream tec
 
-conceitual:https://app.brmodeloweb.com/#!/publicview/69d7c31de56bc192cf505d1b
+conceitual:
 
 logico:https://app.brmodeloweb.com/#!/publicview/69df69dee33b4dc332f92f2d
 
@@ -24,6 +24,6 @@ logico:https://app.brmodeloweb.com/#!/publicview/69df69dee33b4dc332f92f2d
 
 conceitual:https://app.brmodeloweb.com/#!/publicview/69df7102e33b4dc332f9333c
 
-logica:https://app.brmodeloweb.com/#!/publicview/69df720be33b4dc332f9340d
+logica:https://app.brmodeloweb.com/#!/publicview/69df7140e33b4dc332f9335f
 
 </p>
