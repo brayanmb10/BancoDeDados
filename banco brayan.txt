@@ -1,12 +1,3 @@
-Microsoft Windows [versão 10.0.19045.5131]
-(c) Microsoft Corporation. Todos os direitos reservados.
-
-C:\Users\Aluno>cd C:\xampp\mysql\bin
-
-C:\xampp\mysql\bin> -u root
-'-u' não é reconhecido como um comando interno
-ou externo, um programa operável ou um arquivo em lotes.
-
 C:\xampp\mysql\bin>- u root
 '-' não é reconhecido como um comando interno
 ou externo, um programa operável ou um arquivo em lotes.
@@ -188,5 +179,74 @@ MariaDB [loja]> describe produto;
 | datacadastro | date          | NO   |     | NULL    |                |
 +--------------+---------------+------+-----+---------+----------------+
 8 rows in set (0.035 sec)
+
+MariaDB [loja]> insert into categoria (categoria) values
+    -> ('eletronicos'),
+    -> ('roupas'),
+    ->  ('limpeza')
+    -> ;
+ERROR 1146 (42S02): Table 'loja.categoria' doesn't exist
+MariaDB [loja]> insert into categoria (categoria) values
+    -> ('eletronicos'),
+    -> ('roupas'),
+    ->  ('limpeza'),
+    ->  ('hortifruit')
+    -> ;
+ERROR 1146 (42S02): Table 'loja.categoria' doesn't exist
+MariaDB [loja]> insert into categoria (categoria) values
+    -> ('eletronicos'),
+    -> ('roupas'),
+    ->  ('limpeza'),
+    ->  ('hortifruit'),
+    ->  ('frios'),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 6
+MariaDB [loja]> select * from categoria;
+ERROR 1146 (42S02): Table 'loja.categoria' doesn't exist
+MariaDB [loja]> insert into categorias (categorias) values
+    -> ('eletronicos'),
+    -> ('roupas'),
+    ->  ('limpeza'),
+    ->  ('hortifruit'),
+    ->  ('frios'),
+    -> ('açougue');
+ERROR 1054 (42S22): Unknown column 'categorias' in 'field list'
+MariaDB [loja]> ('açougue');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''açougue')' at line 1
+MariaDB [loja]> describe categoria;
+ERROR 1146 (42S02): Table 'loja.categoria' doesn't exist
+MariaDB [loja]> describe categorias;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id_categoria | int(11)      | NO   | PRI | NULL    | auto_increment |
+| categoria    | varchar(255) | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+2 rows in set (0.037 sec)
+
+MariaDB [loja]> insert into categorias (categoria) values
+    -> ('eletronicos'),
+    -> ('roupas'),
+    ->  ('limpeza'),
+    ->  ('hortifruit'),
+    ->  ('frios'),
+    -> ('açougue');
+Query OK, 6 rows affected (0.016 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+MariaDB [loja]> select * from categoria;
+ERROR 1146 (42S02): Table 'loja.categoria' doesn't exist
+MariaDB [loja]> select * from categorias;
++--------------+-------------+
+| id_categoria | categoria   |
++--------------+-------------+
+|            1 | eletronicos |
+|            2 | roupas      |
+|            3 | limpeza     |
+|            4 | hortifruit  |
+|            5 | frios       |
+|            6 | açougue     |
++--------------+-------------+
+6 rows in set (0.001 sec)
 
 MariaDB [loja]>
