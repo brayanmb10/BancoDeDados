@@ -249,4 +249,118 @@ MariaDB [loja]> select * from categorias;
 +--------------+-------------+
 6 rows in set (0.001 sec)
 
-MariaDB [loja]>
+MariaDB [(none)]> use loja
+Database changed
+MariaDB [loja]> describe produto
+    -> ;
++--------------+---------------+------+-----+---------+----------------+
+| Field        | Type          | Null | Key | Default | Extra          |
++--------------+---------------+------+-----+---------+----------------+
+| id_produto   | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nome         | varchar(255)  | NO   |     | NULL    |                |
+| preco        | decimal(10,2) | NO   |     | NULL    |                |
+| quantidade   | int(11)       | NO   |     | NULL    |                |
+| marca        | varchar(255)  | NO   |     | NULL    |                |
+| observacoes  | varchar(255)  | YES  |     | NULL    |                |
+| id_categoria | int(11)       | YES  | MUL | NULL    |                |
+| datacadastro | date          | NO   |     | NULL    |                |
++--------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.025 sec)
+
+MariaDB [loja]> describe produtos
+    -> ;
+ERROR 1146 (42S02): Table 'loja.produtos' doesn't exist
+MariaDB [loja]> insert into produto (idcategoria, nomeproduto, preco, quantidade, marca, observacoes) values
+    -> 1, 'console', '2000,25 'playstation''2026-06-11' 'el quatro' ;
+    '> ;
+    '> ;
+    '> '
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1, 'console', '2000,25 'playstation''2026-06-11' 'el quatro' ;
+;
+;
+'' at line 2
+MariaDB [loja]> 1, 'console', 2000,25 'playstation''2026-06-11' 'el quatro' ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1, 'console', 2000,25 'playstation''2026-06-11' 'el quatro'' at line 1
+MariaDB [loja]> insert into produto (idcategoria, nomeproduto, preco, quantidade, marca, observacoes) values (
+    -> 1, 'console', 2000,25, 'playstation' 'el quatro');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [loja]> insert into produto (idcategoria, nome, preco, quantidade, marca, observacoes) values
+    -> 1, 'console', 2000,25, 'playstation' 'el quatro');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1, 'console', 2000,25, 'playstation' 'el quatro')' at line 2
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes) values
+    -> 1, 'console', 2000,25, 'playstation' 'el quatro');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1, 'console', 2000,25, 'playstation' 'el quatro')' at line 2
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes) values (
+    -> 1, 'console', 2000,25.00, 'playstation' 'el quatro');
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values (
+    -> 1, 'console', 2000,25.00, 'playstation', 'el quatro', '2026-06-11' );
+Query OK, 1 row affected (0.016 sec)
+
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values (
+    -> 1, 'console', 2500,25.00, 'playstation', 'el cinco' '2026-06-11' );
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values (
+    -> 1, 'console', 2500,25.00, 'playstation', 'el cinco', '2026-06-11' );
+Query OK, 1 row affected (0.015 sec)
+
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values
+    -> 2, 'moletom', 100,15.00, 'gangster', '', '2026-06-11' ),
+    -> 2, 'camisa', 80,10.00, 'romã', '', '2026-06-11' ),
+    -> 3, 'desinfetante', 10,100.00, 'não tem', '', '2026-06-11' ),
+    -> 3, 'detergente', 7,100.00, 'suprema', '', '2026-06-11' ),
+    -> 4, 'kiwi', 4,20.00, 'não tem', '', '2026-06-11' ),
+    -> 4, 'jaca', 25,10.00, 'não tem', '', '2026-06-11' ),
+    -> 5, 'presunto', 4,100.00, 'seara', '', '2026-06-11' ),
+    -> 5, 'mussarela', 6,100.00, 'quatro marias', '', '2026-06-11' ),
+    -> 5, 'mortadela', 3,100.00, 'marba', '', '2026-06-11' );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '2, 'moletom', 100,15.00, 'gangster', '', '2026-06-11' ),
+2, 'camisa', 80,10.0...' at line 2
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values
+    -> (1, 'console', 2500,25.00, 'playstation', 'el cinco' '2026-06-11' );
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values
+    -> 1, 'console', 2000,25.00, 'playstation', 'el quatro', '2026-06-11),
+    '> 1, 'console', 2500,25.00, 'playstation', 'el cinco', '2026-06-11),
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '1, 'console', 2000,25.00, 'playstation', 'el quatro', '2026-06-11),
+1, 'conso...' at line 2
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values
+    -> (1, 'console', 2500,25.00, 'playstation', 'el cinco' '2026-06-11' );
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+MariaDB [loja]> insert into produto (id_categoria, nome, preco, quantidade, marca, observacoes, datacadastro) values
+    -> (1, 'console', 2000,25.00, 'playstation', 'el quatro', '2026-06-11' ),
+    -> (1, 'console', 2500,25.00, 'playstation', 'el cinco', '2026-06-11' ),
+    -> (2, 'moletom', 100,15.00, 'gangster', '', '2026-06-11' ),
+    -> (2, 'camisa', 80,10.00, 'romã', '', '2026-06-11' ),
+    -> (3, 'desinfetante', 10,100.00, 'não tem', '', '2026-06-11' ),
+    -> (3, 'detergente', 7,100.00, 'suprema', '', '2026-06-11' ),
+    -> (4, 'kiwi', 4,20.00, 'não tem', '', '2026-06-11' ),
+    -> (4, 'jaca', 25,10.00, 'não tem', '', '2026-06-11' ),
+    -> (5, 'presunto', 4,100.00, 'seara', '', '2026-06-11' ),
+    -> (5, 'mussarela', 6,100.00, 'quatro marias', '', '2026-06-11' ),
+    -> (5, 'mortadela', 3,100.00, 'marba', '', '2026-06-11' );
+Query OK, 11 rows affected (0.026 sec)
+Records: 11  Duplicates: 0  Warnings: 0
+
+MariaDB [loja]> select * from produto
+    -> ;
++------------+--------------+---------+------------+---------------+-------------+--------------+--------------+
+| id_produto | nome         | preco   | quantidade | marca         | observacoes | id_categoria | datacadastro |
++------------+--------------+---------+------------+---------------+-------------+--------------+--------------+
+|          1 | console      | 2000.00 |         25 | playstation   | el quatro   |            1 | 2026-06-11   |
+|          2 | console      | 2500.00 |         25 | playstation   | el cinco    |            1 | 2026-06-11   |
+|          3 | console      | 2000.00 |         25 | playstation   | el quatro   |            1 | 2026-06-11   |
+|          4 | console      | 2500.00 |         25 | playstation   | el cinco    |            1 | 2026-06-11   |
+|          5 | moletom      |  100.00 |         15 | gangster      |             |            2 | 2026-06-11   |
+|          6 | camisa       |   80.00 |         10 | romã          |             |            2 | 2026-06-11   |
+|          7 | desinfetante |   10.00 |        100 | não tem       |             |            3 | 2026-06-11   |
+|          8 | detergente   |    7.00 |        100 | suprema       |             |            3 | 2026-06-11   |
+|          9 | kiwi         |    4.00 |         20 | não tem       |             |            4 | 2026-06-11   |
+|         10 | jaca         |   25.00 |         10 | não tem       |             |            4 | 2026-06-11   |
+|         11 | presunto     |    4.00 |        100 | seara         |             |            5 | 2026-06-11   |
+|         12 | mussarela    |    6.00 |        100 | quatro marias |             |            5 | 2026-06-11   |
+|         13 | mortadela    |    3.00 |        100 | marba         |             |            5 | 2026-06-11   |
++------------+--------------+---------+------------+---------------+-------------+--------------+--------------+
+13 rows in set (0.001 sec)
