@@ -364,3 +364,342 @@ MariaDB [loja]> select * from produto
 |         13 | mortadela    |    3.00 |        100 | marba         |             |            5 | 2026-06-11   |
 +------------+--------------+---------+------------+---------------+-------------+--------------+--------------+
 13 rows in set (0.001 sec)
+
+
+
+Microsoft Windows [versão 10.0.19045.5131]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\Aluno>CD C:\xampp\mysql\bin
+
+C:\xampp\mysql\bin>my sql -u root
+'my' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 52
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use loja
+Database changed
+MariaDB [loja]> describe produto
+    -> ;
++--------------+---------------+------+-----+---------+----------------+
+| Field        | Type          | Null | Key | Default | Extra          |
++--------------+---------------+------+-----+---------+----------------+
+| id_produto   | int(11)       | NO   | PRI | NULL    | auto_increment |
+| nome         | varchar(255)  | NO   |     | NULL    |                |
+| preco        | decimal(10,2) | NO   |     | NULL    |                |
+| quantidade   | int(11)       | NO   |     | NULL    |                |
+| marca        | varchar(255)  | NO   |     | NULL    |                |
+| observacoes  | varchar(255)  | YES  |     | NULL    |                |
+| id_categoria | int(11)       | YES  | MUL | NULL    |                |
+| datacadastro | date          | NO   |     | NULL    |                |
++--------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.017 sec)
+
+MariaDB [loja]> select * from produto
+    -> ;
++------------+--------------+---------+------------+---------------+-------------+--------------+--------------+
+| id_produto | nome         | preco   | quantidade | marca         | observacoes | id_categoria | datacadastro |
++------------+--------------+---------+------------+---------------+-------------+--------------+--------------+
+|          3 | console      | 2000.00 |         25 | playstation   | el quatro   |            1 | 2026-06-11   |
+|          4 | console      | 2500.00 |         25 | playstation   | el cinco    |            1 | 2026-06-11   |
+|          5 | moletom      |  100.00 |         15 | gangster      |             |            2 | 2026-06-11   |
+|          6 | camisa       |   80.00 |         10 | romã          |             |            2 | 2026-06-11   |
+|          7 | desinfetante |   10.00 |        100 | não tem       |             |            3 | 2026-06-11   |
+|          8 | detergente   |    7.00 |        100 | suprema       |             |            3 | 2026-06-11   |
+|          9 | kiwi         |    4.00 |         20 | não tem       |             |            4 | 2026-06-11   |
+|         10 | jaca         |   25.00 |         10 | não tem       |             |            4 | 2026-06-11   |
+|         11 | presunto     |    4.00 |        100 | seara         |             |            5 | 2026-06-11   |
+|         12 | mussarela    |    6.00 |        100 | quatro marias |             |            5 | 2026-06-11   |
+|         13 | mortadela    |    3.00 |        100 | marba         |             |            5 | 2026-06-11   |
++------------+--------------+---------+------------+---------------+-------------+--------------+--------------+
+11 rows in set (0.000 sec)
+
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]>
+MariaDB [loja]> ;
+ERROR: No query specified
+
+MariaDB [loja]> Bye
+Ctrl-C -- exit!
+
+C:\xampp\mysql\bin>use loja
+'use' não é reconhecido como um comando interno
+ou externo, um programa operável ou um arquivo em lotes.
+
+C:\xampp\mysql\bin>mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 55
+Server version: 10.4.27-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use loja
+Database changed
+MariaDB [loja]> SELECT nome, preco FROM produtos;
+ERROR 1146 (42S02): Table 'loja.produtos' doesn't exist
+MariaDB [loja]> SELECT nome, preco FROM produto;
++--------------+---------+
+| nome         | preco   |
++--------------+---------+
+| console      | 2000.00 |
+| console      | 2500.00 |
+| moletom      |  100.00 |
+| camisa       |   80.00 |
+| desinfetante |   10.00 |
+| detergente   |    7.00 |
+| kiwi         |    4.00 |
+| jaca         |   25.00 |
+| presunto     |    4.00 |
+| mussarela    |    6.00 |
+| mortadela    |    3.00 |
++--------------+---------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produto where marca = 'playstation';
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+| id_produto | nome    | preco   | quantidade | marca       | observacoes | id_categoria | datacadastro |
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+|          3 | console | 2000.00 |         25 | playstation | el quatro   |            1 | 2026-06-11   |
+|          4 | console | 2500.00 |         25 | playstation | el cinco    |            1 | 2026-06-11   |
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+2 rows in set (0.000 sec)
+
+MariaDB [loja]> SELECT * from produto where preco > 1500;
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+| id_produto | nome    | preco   | quantidade | marca       | observacoes | id_categoria | datacadastro |
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+|          3 | console | 2000.00 |         25 | playstation | el quatro   |            1 | 2026-06-11   |
+|          4 | console | 2500.00 |         25 | playstation | el cinco    |            1 | 2026-06-11   |
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+2 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos WHERE quant <= 25;
+ERROR 1146 (42S02): Table 'loja.produtos' doesn't exist
+MariaDB [loja]> SELECT * FROM produto WHERE quant <= 25;
+ERROR 1054 (42S22): Unknown column 'quant' in 'where clause'
+MariaDB [loja]> SELECT * FROM produto WHERE quantidade <= 25;
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+| id_produto | nome    | preco   | quantidade | marca       | observacoes | id_categoria | datacadastro |
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+|          3 | console | 2000.00 |         25 | playstation | el quatro   |            1 | 2026-06-11   |
+|          4 | console | 2500.00 |         25 | playstation | el cinco    |            1 | 2026-06-11   |
+|          5 | moletom |  100.00 |         15 | gangster    |             |            2 | 2026-06-11   |
+|          6 | camisa  |   80.00 |         10 | romã        |             |            2 | 2026-06-11   |
+|          9 | kiwi    |    4.00 |         20 | não tem     |             |            4 | 2026-06-11   |
+|         10 | jaca    |   25.00 |         10 | não tem     |             |            4 | 2026-06-11   |
++------------+---------+---------+------------+-------------+-------------+--------------+--------------+
+6 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT nome, preco FROM produto ORDER BY preco ASC LIMIT 8;
++--------------+-------+
+| nome         | preco |
++--------------+-------+
+| mortadela    |  3.00 |
+| kiwi         |  4.00 |
+| presunto     |  4.00 |
+| mussarela    |  6.00 |
+| detergente   |  7.00 |
+| desinfetante | 10.00 |
+| jaca         | 25.00 |
+| camisa       | 80.00 |
++--------------+-------+
+8 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT nome, preco FROM produto ORDER BY preco DESC LIMIT 3;
++---------+---------+
+| nome    | preco   |
++---------+---------+
+| console | 2500.00 |
+| console | 2000.00 |
+| moletom |  100.00 |
++---------+---------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT COUNT(*) AS total_produto FROM produto;
++---------------+
+| total_produto |
++---------------+
+|            11 |
++---------------+
+1 row in set (0.001 sec)
+
+MariaDB [loja]> SELECT AVG(preco) AS preco_medio FROM produto;
++-------------+
+| preco_medio |
++-------------+
+|  430.818182 |
++-------------+
+1 row in set (0.001 sec)
+
+MariaDB [loja]> select nome, quantidade from produto order by quantidade DESC LIMIT 2;
++--------------+------------+
+| nome         | quantidade |
++--------------+------------+
+| desinfetante |        100 |
+| detergente   |        100 |
++--------------+------------+
+2 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT p.nome, c.nome_cat FROM produto p JOIN id_categoria c ON p.id_categoria = c.id_categoria;
+ERROR 1146 (42S02): Table 'loja.id_categoria' doesn't exist
+MariaDB [loja]> SELECT p.nome, c.nome_cat FROM produto p JOIN categoria c ON p.id_categoria = c.id_categoria;
+ERROR 1146 (42S02): Table 'loja.categoria' doesn't exist
+MariaDB [loja]> SELECT p.nome, c.nome_cat FROM produto p JOIN categorias c ON p.id_categoria = c.id_categoria;
+ERROR 1054 (42S22): Unknown column 'c.nome_cat' in 'field list'
+MariaDB [loja]> SELECT p.nome, p.preco, p.quantidade, p.marca from produto p JOIN categoria c ON p.id_categoria = c.id_categoria;
+ERROR 1146 (42S02): Table 'loja.categoria' doesn't exist
+MariaDB [loja]> SELECT p.nome, p.preco, p.quantidade, p.marca from produto p JOIN categorias c ON p.id_categoria = c.id_categoria;
++--------------+---------+------------+---------------+
+| nome         | preco   | quantidade | marca         |
++--------------+---------+------------+---------------+
+| console      | 2000.00 |         25 | playstation   |
+| console      | 2500.00 |         25 | playstation   |
+| moletom      |  100.00 |         15 | gangster      |
+| camisa       |   80.00 |         10 | romã          |
+| desinfetante |   10.00 |        100 | não tem       |
+| detergente   |    7.00 |        100 | suprema       |
+| kiwi         |    4.00 |         20 | não tem       |
+| jaca         |   25.00 |         10 | não tem       |
+| presunto     |    4.00 |        100 | seara         |
+| mussarela    |    6.00 |        100 | quatro marias |
+| mortadela    |    3.00 |        100 | marba         |
++--------------+---------+------------+---------------+
+11 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT p.nome, p.marca, p.preco FROM produto p JOIN categorias c ON p.id_categoria = c.id_categoria WHERE c.nome_cat = 'frios';
+ERROR 1054 (42S22): Unknown column 'c.nome_cat' in 'where clause'
+MariaDB [loja]> SELECT p.nome, p.marca, p.preco FROM produto p JOIN categorias c ON p.id_categoria = c.id_categoria WHERE c.id_categoria = 'frios';
+Empty set (0.001 sec)
+
+MariaDB [loja]> SELECT p.nome, p.marca, p.preco FROM produto p JOIN categorias c ON p.id_categoria = c.id_categoria WHERE p.nome = 'frios';
+Empty set (0.001 sec)
+
+MariaDB [loja]> SELECT p.nome, p.quantidade, p.preco FROM produto p JOIN categorias c ON p.id_categoria = c.id_categoria WHERE  = 'frios';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 'frios'' at line 1
+MariaDB [loja]> describe categorias
+    -> ;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| id_categoria | int(11)      | NO   | PRI | NULL    | auto_increment |
+| categoria    | varchar(255) | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+2 rows in set (0.020 sec)
+
+MariaDB [loja]> SELECT p.nome, p.quantidade, p.preco FROM produto p JOIN categorias c ON p.id_categoria = c.id_categoria WHERE categoria = 'frios';
++-----------+------------+-------+
+| nome      | quantidade | preco |
++-----------+------------+-------+
+| presunto  |        100 |  4.00 |
+| mussarela |        100 |  6.00 |
+| mortadela |        100 |  3.00 |
++-----------+------------+-------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT categoria, COUNT(*) AS total_produtos FROM produto p JOIN categorias c ON p.id_categoria = c.id_categoria GROUP BY categoria;
++-------------+----------------+
+| categoria   | total_produtos |
++-------------+----------------+
+| eletronicos |              2 |
+| frios       |              3 |
+| hortifruit  |              2 |
+| limpeza     |              2 |
+| roupas      |              2 |
++-------------+----------------+
+5 rows in set (0.001 sec)
+
+MariaDB [loja]> SELECT * FROM produtos
+    -> ;
+ERROR 1146 (42S02): Table 'loja.produtos' doesn't exist
+MariaDB [loja]> SELECT * FROM produtos
+    -> SELECT * FROM produtos;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'SELECT * FROM produtos' at line 2
+MariaDB [loja]> select * from produto
+    -> WHERE preco BETWEEN 3 AND 50;
++------------+--------------+-------+------------+---------------+-------------+--------------+--------------+
+| id_produto | nome         | preco | quantidade | marca         | observacoes | id_categoria | datacadastro |
++------------+--------------+-------+------------+---------------+-------------+--------------+--------------+
+|          7 | desinfetante | 10.00 |        100 | não tem       |             |            3 | 2026-06-11   |
+|          8 | detergente   |  7.00 |        100 | suprema       |             |            3 | 2026-06-11   |
+|          9 | kiwi         |  4.00 |         20 | não tem       |             |            4 | 2026-06-11   |
+|         10 | jaca         | 25.00 |         10 | não tem       |             |            4 | 2026-06-11   |
+|         11 | presunto     |  4.00 |        100 | seara         |             |            5 | 2026-06-11   |
+|         12 | mussarela    |  6.00 |        100 | quatro marias |             |            5 | 2026-06-11   |
+|         13 | mortadela    |  3.00 |        100 | marba         |             |            5 | 2026-06-11   |
++------------+--------------+-------+------------+---------------+-------------+--------------+--------------+
+7 rows in set (0.001 sec)
+
+MariaDB [loja]> select * from produto
+    -> WHERE nome LIKE 'm%';
++------------+-----------+--------+------------+---------------+-------------+--------------+--------------+
+| id_produto | nome      | preco  | quantidade | marca         | observacoes | id_categoria | datacadastro |
++------------+-----------+--------+------------+---------------+-------------+--------------+--------------+
+|          5 | moletom   | 100.00 |         15 | gangster      |             |            2 | 2026-06-11   |
+|         12 | mussarela |   6.00 |        100 | quatro marias |             |            5 | 2026-06-11   |
+|         13 | mortadela |   3.00 |        100 | marba         |             |            5 | 2026-06-11   |
++------------+-----------+--------+------------+---------------+-------------+--------------+--------------+
+3 rows in set (0.001 sec)
+
+MariaDB [loja]> select distinct marca FROM produto;
++---------------+
+| marca         |
++---------------+
+| playstation   |
+| gangster      |
+| romã          |
+| não tem       |
+| suprema       |
+| seara         |
+| quatro marias |
+| marba         |
++---------------+
+8 rows in set (0.001 sec)
+
+MariaDB [loja]>
